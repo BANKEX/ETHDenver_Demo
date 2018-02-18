@@ -362,7 +362,7 @@ function initZKETHContract() {
 		}
 	];
 
-	var contractAaddress = "0x324f8c6d8c0801cdddd86d1936d8ce7b95f8a654";
+	var contractAaddress = "0xf250380b6af681b8c45fe57ecd261d25ccac2bd7";
 	// var contract = localWeb3.eth.contract(abi);
 
 	return new localWeb3.eth.Contract(abi, contractAaddress, { from: window.account });
@@ -1022,7 +1022,7 @@ function initTokenContract() {
 		}
 	];
 
-	var contractAaddress = "0xc7b8f6dfc4ec585a12a3d5040f8f5b6a383d0049";
+	var contractAaddress = "0x827b4bccfd235f7ba220a073df221a24b7771f53";
 	// var contract = localWeb3.eth.contract(abi);
 
 	return new localWeb3.eth.Contract(abi, contractAaddress, { from: window.account });
