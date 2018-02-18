@@ -193,9 +193,9 @@
 				var amountString = $(this).parent().parent().find("input[name='amount']").val();
 				var secretString = $(this).parent().parent().find("input[name='secret']").val();
 
-				var amount = new window.web3.BigNumber(amountString);
-				var secret = new window.web3.BigNumber(secretString);
-
+				var amount = new window.localWeb3.utils.BN(amountString);
+				var secret = new window.localWeb3.utils.BN(secretString);
+				
 				window.zkContractInstance.methods.withdraw(amount, secret).call({ from: window.account }, function (err, res) {
 					if (!err) {
 						result = res ? "<span class='green-color'>true</span>" : "<span class='red-color'>false</span>";
@@ -213,8 +213,8 @@
 				var amountString = $(this).parent().parent().find("input[name='amount']").val();
 				var secretString = $(this).parent().parent().find("input[name='secret']").val();
 
-				var amount = new window.web3.BigNumber(amountString);
-				var secret = new window.web3.BigNumber(secretString);
+				var amount = new window.localWeb3.utils.BN(amountString);
+				var secret = new window.localWeb3.utils.BN(secretString);
 
 				// For presentation purposes only. TODO: remove call in order to execute TX 
 				window.zkContractInstance.methods.withdraw(amount, secret).send({ from: window.account }, function (err, res) {

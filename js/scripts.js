@@ -38,7 +38,6 @@ $(document).ready(function () {
 	
 	var accountInterval = setInterval(function() {
 		localWeb3.eth.getAccounts((err, accs) => {
-			console.log(accs);
 			if (err != null) {
 				return;
 			}
@@ -51,6 +50,7 @@ $(document).ready(function () {
 				window.account = accs[0];
 
 				if (window.onAccountChanged) {
+					console.log(window.account);
 					onAccountChanged(window.account);
 				}
 			}
