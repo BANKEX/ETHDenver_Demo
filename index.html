@@ -171,6 +171,7 @@
 	</section>
 
 	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/web3.min.js"></script>
 	<script src="js/scripts.js"></script>
 	<script>
 		function onDocumentReady() {
@@ -178,11 +179,9 @@
 				var el = $(this);
 				var account = el.data("account");
 
-				window.tokenContractInstance.balanceOf(account, function (err, res) {
-					console.log(err, res);
-
+				window.tokenContractInstance.methods.balanceOf(account).call({}, function (err, res) {
 					if (!err) {
-						var balance = res.toFormat(0);
+						var balance = res;
 						el.find(".direct-balance-value").text(balance);
 					} else {
 						console.error(err);
@@ -197,9 +196,13 @@
 				var amount = new window.web3.BigNumber(amountString);
 				var secret = new window.web3.BigNumber(secretString);
 
-				window.zkContractInstance.withdraw.call(amount, secret, function (err, res) {
+				window.zkContractInstance.methods.withdraw(amount, secret).call({ from: window.account }, function (err, res) {
 					if (!err) {
 						result = res ? "<span class='green-color'>true</span>" : "<span class='red-color'>false</span>";
+
+						addTx("checkBalance(" + amountString + ", " + secretString + ")", result, 20);
+					} else {
+						result = "<span class='red-color'>false</span>";
 
 						addTx("checkBalance(" + amountString + ", " + secretString + ")", result, 20);
 					}
@@ -214,11 +217,15 @@
 				var secret = new window.web3.BigNumber(secretString);
 
 				// For presentation purposes only. TODO: remove call in order to execute TX 
-				window.zkContractInstance.withdraw.call(amount, secret, function (err, res) {
+				window.zkContractInstance.methods.withdraw(amount, secret).send({ from: window.account }, function (err, res) {
 					if (!err) {
 						result = res ? "<span class='green-color'>true</span>" : "<span class='red-color'>false</span>";
 
-						addTx("withdraw(" + amountString + ", " + secretString + ")", result, 3000, 7);
+						addTx("checkBalance(" + amountString + ", " + secretString + ")", result, 3000, 7);
+					} else {
+						result = "<span class='red-color'>false</span>";
+
+						addTx("checkBalance(" + amountString + ", " + secretString + ")", result, 3000, 7);
 					}
 				});
 			});

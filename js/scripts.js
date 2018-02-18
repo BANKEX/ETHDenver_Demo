@@ -1,25 +1,26 @@
 $(document).ready(function () {
 	if (typeof web3 !== 'undefined') {
-		window.web3 = new Web3(web3.currentProvider);
+		window.localWeb3 = new Web3(web3.currentProvider);
+		// window.web3 = new Web3(localWeb3.currentProvider);
 	} else {
 		console.log('No web3? You should consider trying MetaMask!')
-		window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+		window.web3 = new Web3(new localWeb3.providers.HttpProvider("http://localhost:8545"));
 	}
 
 	window.tokenContractInstance = initTokenContract();
 	window.zkContractInstance = initZKETHContract();
 
-	web3.version.getNetwork((err, netId) => {
-		switch (netId) {
-		case "4":
-			console.log('This is the Rinkeby test network');
-			break;
-		default:
-			alert('Please select Rinkeby network in MetaMask')
-		}
-	});
+	// localWeb3.version.getNetwork((err, netId) => {
+	// 	switch (netId) {
+	// 	case "4":
+	// 		console.log('This is the Rinkeby test network');
+	// 		break;
+	// 	default:
+	// 		alert('Please select Rinkeby network in MetaMask')
+	// 	}
+	// });
 
-	web3.eth.getAccounts((err, accs) => {
+	localWeb3.eth.getAccounts((err, accs) => {
 		if (err != null) {
 			return;
 		}
@@ -36,7 +37,8 @@ $(document).ready(function () {
 	});
 	
 	var accountInterval = setInterval(function() {
-		web3.eth.getAccounts((err, accs) => {
+		localWeb3.eth.getAccounts((err, accs) => {
+			console.log(accs);
 			if (err != null) {
 				return;
 			}
@@ -361,9 +363,11 @@ function initZKETHContract() {
 	];
 
 	var contractAaddress = "0x324f8c6d8c0801cdddd86d1936d8ce7b95f8a654";
-	var contract = web3.eth.contract(abi);
+	// var contract = localWeb3.eth.contract(abi);
+
+	return new localWeb3.eth.Contract(abi, contractAaddress, { from: window.account });
 	
-	return contract.at(contractAaddress);
+	// return contract.at(contractAaddress);
 }
 
 function initTokenContract() {
@@ -1019,7 +1023,9 @@ function initTokenContract() {
 	];
 
 	var contractAaddress = "0xc7b8f6dfc4ec585a12a3d5040f8f5b6a383d0049";
-	var contract = web3.eth.contract(abi);
+	// var contract = localWeb3.eth.contract(abi);
+
+	return new localWeb3.eth.Contract(abi, contractAaddress, { from: window.account });
 	
-	return contract.at(contractAaddress);
+	// return contract.at(contractAaddress);
 }
