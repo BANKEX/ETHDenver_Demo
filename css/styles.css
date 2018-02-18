@@ -217,3 +217,24 @@ input[type="text"] {
 textarea {
 	padding: 8px;
 }
+
+@media only screen 
+and (min-device-width : 414px) 
+and (max-device-width : 736px) 
+and (orientation : portrait) {
+	section.content {
+		flex-direction: column;
+	}
+
+	aside {
+		order: 2;
+	}
+
+	.row {
+		flex-direction: column;
+	}
+
+	.transaction {
+		width: 100%;
+	}
+}
