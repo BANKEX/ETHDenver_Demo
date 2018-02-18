@@ -1,6 +1,8 @@
 # ETHDenver: BANKEX Confidential Transactions Demo
 Confidential Transactions Demo
 
+![Alt text](https://bankex.github.io/ETHDenver_Demo/img/screenshot-01.png)
+
 ## Running the example
 
 ```bash
