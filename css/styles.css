@@ -1,0 +1,166 @@
+body {
+	font-family: Helvetica;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+header.top {
+	background-color: #334455;
+	padding: 20px 16px 16px 16px;
+}
+
+header.top img {
+	height: 35px;
+}
+
+header h1 {
+	font-size: 1.2rem;
+	color: white;
+}
+
+section.content {
+	background-color: #eeeeee;
+	flex: 1;
+	display: flex;
+	min-height: 100%;
+}
+
+section.content aside {
+	width: 436px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+section.content aside section.account {
+	padding: 16px;
+}
+
+section.content aside section.account .fa-unlock {
+	display: none;
+}
+
+section.content aside section.account .fa-lock {
+	display: block;
+}
+
+section.content aside section.account.active .fa-lock {
+	display: none;
+}
+
+section.content aside section.account.active .fa-unlock {
+	display: block;
+}
+
+section.content aside section.account div.address {
+	font-family: monospace;
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin: 0 0 1.7rem 0;
+}
+
+section.content aside section.account div.balance {
+	font-size: 2rem;
+	font-weight: bold;
+	margin: 0 0 1rem 0;
+}
+
+section.content section.main {
+	flex: 1;
+	padding: 16px 24px 16px 24px;
+	display: flex;
+	flex-direction: column;
+}
+
+section.content section.main div.transaction {
+	min-height: 40px;
+	border: 1px solid #aaaaee;
+	border-radius: 0.3rem;
+	padding: 12px;
+	margin-bottom: 1rem;
+}
+
+section.content section.main div.transaction h2 {
+	margin: 8px 8px 0 8px;
+}
+
+section.content section.main div.transaction .tx-details {
+	margin: 12px;
+	font-size: 0.9rem;
+}
+
+section.content section.main div.transaction .tx-details h3 {
+	margin-top: 1rem;
+	margin-bottom: 0.7rem;
+	font-size: 1rem;
+}
+
+section.content header {
+	font-size: 2rem;
+	font-weight: bold;
+	margin-top: 0.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.a-color {
+	border-right: 8px solid transparent;
+	background-color: #bbccee;
+}
+
+.a-color.active {
+	border-right: 8px solid #7788bb;
+}
+
+.b-color {
+	border-right: 8px solid transparent;
+	background-color: #cceecc;
+}
+
+.b-color.active {
+	border-right: 8px solid #88aa88;
+}
+
+.c-color {
+	border-right: 8px solid transparent;
+	background-color: #eeeecc;
+}
+
+.c-color.active {
+	border-right: 8px solid #bbbb88;
+}
+
+.badge {
+	padding: 8px 12px 8px 12px;
+	margin: 0 2px 0 2px;
+	border-radius: 8px;
+	border: 1px solid #666666;
+}
+
+.fa-lock {
+	color: maroon;
+}
+
+.fa-unlock {
+	color: green;
+}
+
+.pull-right {
+	float: right;
+}
+
+.text-muted {
+	color: #888888;
+}
+
+input[type="text"] {
+	position: relative;
+	font-size: 1.2rem;
+	padding: 0px 8px 0px 8px;
+	top: -2px;
+	height: 35px;
+	margin: 0 4px 0 4px;
+	border-radius: 8px;
+	border: 1px solid #666666;
+}
