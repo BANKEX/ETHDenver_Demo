@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Confidential Transactions Demo</title>
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<script defer src="js/fontawesome-all.js"></script>
@@ -195,7 +196,7 @@
 
 				var amount = new window.localWeb3.utils.BN(amountString);
 				var secret = new window.localWeb3.utils.BN(secretString);
-				
+
 				window.zkContractInstance.methods.withdraw(amount, secret).call({ from: window.account }, function (err, res) {
 					if (!err) {
 						result = res ? "<span class='green-color'>true</span>" : "<span class='red-color'>false</span>";

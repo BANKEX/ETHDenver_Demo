@@ -222,14 +222,23 @@ textarea {
 and (min-device-width : 414px) 
 and (max-device-width : 736px) 
 and (orientation : portrait) {
+	.projectname {
+		display: none;
+	}
+
+	.badge {
+		margin-top: 8px;
+	}
+
 	section.content {
 		flex-direction: column;
+		padding-right: 24px;
 	}
 
 	aside {
 		order: 2;
 	}
-
+	
 	.row {
 		flex-direction: column;
 	}
