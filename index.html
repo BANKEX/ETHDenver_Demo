@@ -7,26 +7,27 @@
 </head>
 <body>
 	<header class="top">
-		<img src="img/logo.svg">
+		<img src="img/bankex-foundation-logo-whte.png">
+		<span class="projectname">Confidential Transactions Demo</span>
 	</header>
 	<section class="content">
 		<aside>
 			<section class="account a-color" data-account="0x6394b37cf80a7358b38068f0ca4760ad49983a1b">
 				<header><i class="fas fa-user"></i> Alice</header>
 				<div class="address">0x6394b37Cf80A7358b38068f0CA4760ad49983a1B</div>
-				<div class="balance"><span class="text-muted">Direct balance:</span> <span class="direct-balance-value pull-right"><i class="fas fa-sync fa-spin text-muted"></i></span></div>
+				<div class="balance"><span class="text-muted">Open balance:</span> <span class="direct-balance-value pull-right"><i class="fas fa-sync fa-spin text-muted"></i></span></div>
 				<div class="balance"><span class="text-muted">Shadow balance:</span> <i class="fas fa-unlock pull-right"></i><i class="fas fa-lock pull-right"></i></div>
 			</section>
 			<section class="account b-color" data-account="0xdfd9eb6f7712b8e0544e99eb10dda4893571fc1f">
 				<header><i class="fas fa-user"></i> Bob</header>
 				<div class="address">0xDFD9Eb6F7712B8E0544E99EB10DDa4893571FC1f</div>
-				<div class="balance"><span class="text-muted">Direct balance:</span> <span class="direct-balance-value pull-right"><i class="fas fa-sync fa-spin text-muted"></i></span></div>
+				<div class="balance"><span class="text-muted">Open balance:</span> <span class="direct-balance-value pull-right"><i class="fas fa-sync fa-spin text-muted"></i></span></div>
 				<div class="balance"><span class="text-muted">Shadow balance:</span>  <i class="fas fa-unlock pull-right"></i><i class="fas fa-lock pull-right"></i></div>
 			</section>
 			<section class="account c-color" data-account="0xb1056ce3221fc2693ef9d18b2700649955ab2f88">
 				<header><i class="fas fa-user"></i> Eva</header>
 				<div class="address">0xb1056CE3221Fc2693eF9D18b2700649955AB2f88</div>
-				<div class="balance"><span class="text-muted">Direct balance:</span> <span class="direct-balance-value pull-right"><i class="fas fa-sync fa-spin text-muted"></i></span></div>
+				<div class="balance"><span class="text-muted">Open balance:</span> <span class="direct-balance-value pull-right"><i class="fas fa-sync fa-spin text-muted"></i></span></div>
 				<div class="balance"><span class="text-muted">Shadow balance:</span> <i class="fas fa-unlock pull-right"></i><i class="fas fa-lock pull-right"></i></div>
 			</section>
 		</aside>
@@ -37,11 +38,11 @@
 					<h2>#1 <span class="text-muted">Alice:</span> deposit() <a href="https://rinkeby.etherscan.io/tx/0x15d7a99bb20cb585d9dd103aac461b2435ea491912437292bf599cf25b0a932d" target="_blank"><i class="fas fa-external-link-alt pull-right"></i></a></h2>
 				</div>
 				<div class="transaction a-color">
-					<h2>#2 <span class="text-muted">Alice:</span> transferWithProof([<span class="badge b-color">Bob</span>, <span class="badge a-color">Alice</span>], Proof 1, Proof 2, Proof 3, Proof 4) <i style="position: relative; top: 2px; margin-right: 0.7rem;" onclick="$(this).parent().next().toggle();" class="fas fa-caret-square-down"></i> <a href="https://rinkeby.etherscan.io/tx/0x7f7fd552d345a583a1d345a3e0427fcb18dccf4a6c0a2b008756d81042558155" target="_blank"><i class="fas fa-external-link-alt pull-right"></i></a></h2>
+					<h2>#2 <span class="text-muted">Alice:</span> transferWithProof(<span class="badge b-color">Bob</span>, <span class="badge a-color">Alice</span>, Range Proof) <i style="position: relative; top: 2px; margin-right: 0.7rem;" onclick="$(this).parent().next().toggle();" class="fas fa-caret-square-down"></i> <a href="https://rinkeby.etherscan.io/tx/0x7f7fd552d345a583a1d345a3e0427fcb18dccf4a6c0a2b008756d81042558155" target="_blank"><i class="fas fa-external-link-alt pull-right"></i></a></h2>
 					<div class="tx-details" style="display: none;">
-						<h3>Address 1, Address 2</h3>
+						<h3>Address 1 and Address 2</h3>
 						["0xDFD9Eb6F7712B8E0544E99EB10DDa4893571FC1f", "0x6394b37Cf80A7358b38068f0CA4760ad49983a1B"]
-						<h3>Proof 1</h3>
+						<h3>Field Elements</h3>
 						["0x2c9720c7b32969c3bb9897eb72f4095f7c1c420765a86d95e93fbb9ae96121f4",
 						"0x47089c5274c047f5c3c5da435b528feb00ab585fa0a5727f9cad04bd2d20d6b",
 						"0x6b36cb0c3625a82f54fff239333e3d0669322ca167f44e35522a9f8612206d5",
@@ -63,7 +64,7 @@
 						"0x1facc37401175e83ec67db248ca41e68e115e038f4190ad2972cbed27cd8189c",
 						"0x2a68b9a7d0834ff298150daceaa8352cb1e45f0e42c58409d0aaed6e9a2e6150"
 						]
-						<h3>Proof 2</h3>
+						<h3>Scalars</h3>
 						["0x1a0006a995129b93784f984fd1e48557b51fc9b093cd9d39aea19375d4bf1cb9",
 						"0x14f081e721cabe5bde32aa250aa88b355527819bdf41525664c82b51c35df918",
 						"0x2fad51dae231a7ff1f7abbf21f44119181c49089e0b10ac6010b30e52b574ba6",
@@ -75,7 +76,7 @@
 						"0x285c8f87beeb10a6b4a7762e3545e23b01c75f716ba5f70adefa5a6702d45ea1",
 						"0x2fab6f87c59d17119c047cd1654ad953e1116036725bcc034d106aa0fcbd6009"
 						]
-						<h3>Proof 3</h3>
+						<h3>Ls</h3>
 						["0x1d164b71c139692217a71f13ce1cb58e242dfa9db14b2f6ef0291cb6ae9b9bcf",
 						"0xfc3c9277e2d393093d9ed86181643deda08c643324add14faac04a520e113f6",
 						"0x1e173947d165cec131efc7ed06cd6b62087466a5831777f2a2f639b9d7a23b90",
@@ -85,7 +86,7 @@
 						"0x112cdd347435c99a1ad76b92fc7d644f2b95080f80e00decd8fab5cfa0e79eba",
 						"0x2b3766d4cccf700aecb75bccd14ffa1a4bc8bc18414c230ffae96eae7c96be9"
 						]
-						<h3>Proof 4</h3>
+						<h3>Rs</h3>
 						["0x9b8deb2766e964b62dd877f03ffec86b799f3af2fbf447f96b6c2ef4e96a8d8",
 						"0x2b922b3f24c5713b057eedcea5e2b3d33cf225863f963fbf1a8e07826253d411",
 						"0x22c6b98ed44bc3d1f61cb45e884aa482b8e4161f7a0c9577a559454756bb594e",
@@ -103,9 +104,66 @@
 			<br>
 			<div id="new-tx">
 				<header><i class="fas fa-paper-plane" ></i> New Transaction</header>
-				<section>
-					<div class="transaction b-color">
-						<h2>#3 <span class="text-muted">Bob:</span> withdraw(<input type="text" name="value" value="7">, <input type="text" name="secret" value="123">) <span id="btn-initiate-tx"><i style="position: relative; top: 2px; color: green;" class="fas fa-play pull-right"></i></span></h2>
+				<section class="row">
+					<div class="col">
+						<div class="transaction b-color">
+							<h2><span class="text-muted">Bob:</span> checkBalance() <span id="btn-initiate-check-tx"><i style="position: relative; top: 2px; color: green;" class="fas fa-play pull-right"></i></span></h2>
+							<br>
+							<div class="param">
+								<div class="label">Amount</div>
+								<div class="input"><input class="input" type="text" name="amount" value=""></div>
+							</div>
+							<div class="param">
+								<div class="label">Blinding</div>
+								<div class="input"><input class="input" type="text" name="secret" value=""></div>
+							</div>
+						</div>
+					</div>
+					<div class="spacer"></div>
+					<div class="col">
+						<div class="transaction b-color">
+							<h2><span class="text-muted">Bob:</span> withdraw() <span id="btn-initiate-withdraw-tx"><i style="position: relative; top: 2px; color: green;" class="fas fa-play pull-right"></i></span></h2>
+							<br>
+							<div class="param">
+								<div class="label">Amount</div>
+								<div class="input"><input class="input" type="text" name="amount" value=""></div>
+							</div>
+							<div class="param">
+								<div class="label">Blinding</div>
+								<div class="input"><input class="input" type="text" name="secret" value=""></div>
+							</div>
+						</div>
+					</div>
+					<div class="spacer"></div>
+					<div class="col">
+						<div class="transaction b-color">
+							<h2><span class="text-muted">Bob:</span> transferWithProof() <span id="btn-initiate-transfer-tx"><i style="position: relative; top: 2px; color: green;" class="fas fa-play pull-right"></i></span></h2>
+							<br>
+							<div class="param">
+								<div class="label">Address 1</div>
+								<div class="input"><input class="input" type="text" name="address-1" value=""></div>
+							</div>
+							<div class="param">
+								<div class="label">Address 2</div>
+								<div class="input"><input class="input" type="text" name="address-2" value=""></div>
+							</div>
+							<div class="param">
+								<div class="label">Field Elements</div>
+								<div class="input"><textarea rows="4" class="input" type="text" name="fe" value=""></textarea></div>
+							</div>
+							<div class="param">
+								<div class="label">Scalars</div>
+								<div class="input"><textarea rows="4" class="input" type="text" name="sc" value=""></textarea></div>
+							</div>
+							<div class="param">
+								<div class="label">Ls</div>
+								<div class="input"><textarea rows="4" class="input" type="text" name="ls" value=""></textarea></div>
+							</div>
+							<div class="param">
+								<div class="label">Rs</div>
+								<div class="input"><textarea rows="4" class="input" type="text" name="rs" value=""></textarea></div>
+							</div>
+						</div>
 					</div>
 				</section>
 			</div>
@@ -132,40 +190,35 @@
 				});
 			});
 
-			$("#btn-initiate-tx").click(function () {
-				var valueString = $(this).parent().find("input[name='value']").val();
-				var secretString = $(this).parent().find("input[name='secret']").val();
+			$("#btn-initiate-check-tx").click(function () {
+				var amountString = $(this).parent().parent().find("input[name='amount']").val();
+				var secretString = $(this).parent().parent().find("input[name='secret']").val();
 
-				var value = new window.web3.BigNumber('7');
-				var secret = new window.web3.BigNumber('123');
+				var amount = new window.web3.BigNumber(amountString);
+				var secret = new window.web3.BigNumber(secretString);
 
-				window.zkContractInstance.withdraw(value, secret, function (err, res) {
-					console.log(err, res);
+				window.zkContractInstance.withdraw.call(amount, secret, function (err, res) {
+					if (!err) {
+						result = res ? "<span class='green-color'>true</span>" : "<span class='red-color'>false</span>";
 
-					if (!err && res === true) {
-						$("#withdrawal-transaction").show();
-						$("#new-tx").hide();
+						addTx("checkBalance(" + amountString + ", " + secretString + ")", result, 20);
+					}
+				});
+			});
 
-						setTimeout(function () {
-							$("#withdrawal-transaction").find(".fa-spin").removeClass("fa-sync").removeClass("fa-spin").addClass("fa-external-link-alt");
+			$("#btn-initiate-withdraw-tx").click(function () {
+				var amountString = $(this).parent().parent().find("input[name='amount']").val();
+				var secretString = $(this).parent().parent().find("input[name='secret']").val();
 
-							$("section.account[data-account='0xdfd9eb6f7712b8e0544e99eb10dda4893571fc1f']").find(".direct-balance-value").text(7);
-						}, 3000);
+				var amount = new window.web3.BigNumber(amountString);
+				var secret = new window.web3.BigNumber(secretString);
 
-						// alert("ok");
-						// el.find(".direct-balance-value").text(balance);
-					} else {
-						// For demo purposes only. Real-world scenario - onSuccess
-						$("#withdrawal-transaction").show();
-						$("#new-tx").hide();
+				// For presentation purposes only. TODO: remove call in order to execute TX 
+				window.zkContractInstance.withdraw.call(amount, secret, function (err, res) {
+					if (!err) {
+						result = res ? "<span class='green-color'>true</span>" : "<span class='red-color'>false</span>";
 
-						setTimeout(function () {
-							$("#withdrawal-transaction").find(".fa-spin").removeClass("fa-sync").removeClass("fa-spin").addClass("fa-external-link-alt");
-
-							$("section.account[data-account='0xdfd9eb6f7712b8e0544e99eb10dda4893571fc1f']").find(".direct-balance-value").text(7);
-						}, 3000);
-
-						console.error(err);
+						addTx("withdraw(" + amountString + ", " + secretString + ")", result, 3000, 7);
 					}
 				});
 			});
@@ -176,6 +229,28 @@
 			
 			var activeAccount = $("section.account[data-account='" + account + "']");
 			activeAccount.addClass("active");
+		}
+
+		// Stub for demo: TODO: change to actual TX monitoring
+		
+		var txCount = 2;
+
+		function addTx(fn, result, timeout, newBaance) {
+			var accountInfo = { id: "b", name: "Bob", address: "0xdfd9eb6f7712b8e0544e99eb10dda4893571fc1f" };
+			txCount++;
+
+			var query = "<div class=\"transaction " + accountInfo.id + "-color\"><h2>#" + txCount + " <span class=\"text-muted\">" + accountInfo.name + ":</span> " + fn + "<span class='tx-result'></span> <i class=\"fas fa-sync fa-spin text-muted pull-right\"></i></h2></div>";
+			var el = $(query);
+
+			el.appendTo($("#tx-history"));
+
+			setTimeout(function () {
+				el.find(".fa-spin").removeClass("fa-sync").removeClass("fa-spin").addClass("fa-external-link-alt");
+				el.find(".tx-result").html(": " + result);
+
+				if (newBaance > 0)
+					$("section.account[data-account='" + accountInfo.address + "']").find(".direct-balance-value").text(newBaance);
+			}, timeout);
 		}
 	</script>
 </body>

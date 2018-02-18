@@ -9,10 +9,20 @@ body {
 header.top {
 	background-color: #334455;
 	padding: 20px 16px 16px 16px;
+	display: flex;
+	align-items: center;
 }
 
 header.top img {
-	height: 35px;
+	height: 55px;
+}
+
+header.top .projectname {
+	color: white;
+	font-size: 2rem;
+	flex: 1;
+	text-align: right;
+	padding-right: 12px;
 }
 
 header h1 {
@@ -97,11 +107,36 @@ section.content section.main div.transaction .tx-details h3 {
 	font-size: 1rem;
 }
 
+div.transaction .param {
+	margin: 6px;
+}
+
+div.transaction .param .input {
+	display: flex;
+}
+
+div.transaction .param .label {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin: 16px 0 8px 0;
+}
+
 section.content header {
 	font-size: 2rem;
 	font-weight: bold;
 	margin-top: 0.5rem;
 	margin-bottom: 1.5rem;
+}
+
+.row {
+	margin-bottom: 12px;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+}
+
+.row .col {
+	flex: 1;
 }
 
 .a-color {
@@ -154,13 +189,31 @@ section.content header {
 	color: #888888;
 }
 
-input[type="text"] {
-	position: relative;
+.green-color {
+	color: green;
+}
+
+.red-color {
+	color: red;
+}
+
+.spacer {
+	width: 32px;
+	height: 32px;
+}
+
+input[type="text"], textarea {
 	font-size: 1.2rem;
 	padding: 0px 8px 0px 8px;
-	top: -2px;
-	height: 35px;
-	margin: 0 4px 0 4px;
 	border-radius: 8px;
 	border: 1px solid #666666;
+	flex: 1;
+}
+
+input[type="text"] {
+	height: 35px;
+}
+
+textarea {
+	padding: 8px;
 }
